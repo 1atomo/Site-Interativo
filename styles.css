@@ -1,0 +1,153 @@
+/*resets de navegador(predefinicao ja existente)*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+body{
+    background-image: url(./assets/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+body *{
+    font-family: sans-serif;
+    line-height: 160%;
+}
+header{
+   padding-top: 32px;
+   height: calc(120px + 32px); /*funcao para mandar ele calcular a altura se n quiser fazer de cabeca*/
+}
+header img {
+    width: 100%;
+    border-radius: 50%;
+    
+}
+header div{
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+
+    transition: transform .3s; /*propriedade que faz ser interativo pra pulsar e o .3s é o tempo que vai durar*/
+
+}
+header div:hover{ /*faz com que seja interativo,qnd passar o mouse ele vai pulsar de modo em  1.1 (o primeiro 1 é 100% e o segundo é o quanto vai ampliar*/
+    transform: scale(1.1);
+}
+main{
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-top: 32px; /*margem refente ao objeto acima ou oq esta em cima, pode ser os pixels de espacoes entre */
+
+}
+section{
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+
+}
+
+section div {
+    background-color: #2A2634 ;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px; /* border radius é arredondamento da borda */
+
+
+}
+section h2 {
+    letter-spacing: -0.47px; }
+
+section p{
+    letter-spacing: -0.18px;
+    color: A1A1AA;
+
+
+}
+
+ul {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+section ul li{
+    transition: transform .3s;
+}
+section ul li:hover{
+    transform: scale(1.1);
+}
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+
+}
+
+/*animacao*/
+
+header div {
+    animation: fromTop .7s backwards;
+    animation-delay: 2s; /*delay pra comecar a animacao,se quiser*/
+}
+main section {
+    animation: toTop .7s; 
+
+}
+main section:nth-child(1){ /* to mandando ele pegar um section, em seguida escolho qual pelo numero,no caso 1*/
+    animation-delay: 0;
+     
+}
+main section:nth-child(2){ /* to mandando ele pegar um section, em seguida escolho qual pelo numero,no caso 2*/
+    animation-delay: .3s;
+        
+}
+main section:nth-child(3){ /* to mandando ele pegar um section, em seguida escolho qual pelo numero,no caso 3*/
+    animation-delay: .5s;
+        
+}
+@keyframes fromTop {/* @keyframes é das animacoes e o nome da frente é o de escolha*/
+    from{
+        opacity: 0;
+        transform: translateY(-30px); /* vai comecar la em cima em -30 e vai chegar ate o 0, que é o padrao*/
+        
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes toTop {
+    from{
+        opacity: 0;
+        transform: translateY(30px); /* vai comecar de baixo pra cima*/
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
